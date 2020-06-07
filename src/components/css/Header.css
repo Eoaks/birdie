@@ -1,0 +1,46 @@
+.touch-header{
+    height: 9vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.touch-header h1{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-weight: 600;
+}
+.mobile-bottom-nav{
+    width: 100%;
+    height: 9vh;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.desktop-header{
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    align-items: center;
+    background-color: #fff;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+}
+.logo {
+    width: 50px;
+}
+.logo:hover{
+    background-color: rgba(29, 161, 242, 0.1);
+    border-radius: 50%;
+}
