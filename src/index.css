@@ -36,7 +36,9 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-	line-height: 1;
+    line-height: 1;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
 }
 
 ol, ul {
@@ -378,4 +380,9 @@ textarea {
     position: relative;
     left: 50px;
     height: 100vh;
+}
+.flex-r-v-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
