@@ -1,6 +1,6 @@
 import React from 'react';
 //components
-import Login from './Login';
+import Login from '../containers/LoginContainer';
 import NewTweet from './NewTweet';
 import Tweet from './Tweet';
 //utils
@@ -10,10 +10,6 @@ import {getCookieValue} from '../utils/functions';
 export default class Home extends React.Component {
     constructor(){
         super();
-        this.state = {
-            loggedIn: getCookieValue('loggedIn'),
-            tweets: []
-        }        
         this.renderTweets = this.renderTweets.bind(this);
         this.getTweets = this.getTweets.bind(this);
         this.setLoggedIn = this.setLoggedIn.bind(this);
@@ -25,13 +21,13 @@ export default class Home extends React.Component {
 
     getTweets() {
         ajax('tweets').then(response =>{
-            this.setState({tweets: response})
+            this.props.getTweets(response)
         })
     }
 
     renderTweets(){
-        if(this.state.tweets.length > 0) {
-            return this.state.tweets.map( tweet => (
+        if(this.props.tweets.length > 0) {
+            return this.props.tweets.map( tweet => (
                 <Tweet data={tweet} key={tweet._id}/>
             ))
         }
@@ -42,7 +38,7 @@ export default class Home extends React.Component {
         })
     }
     render() {
-        if(this.state.loggedIn !== 'true'){
+        if(!this.props.loggedIn){
             return <Login setLoggedIn={this.setLoggedIn} />
         } 
 

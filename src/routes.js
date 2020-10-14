@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = React.lazy(() => import('./components/Home.jsx'));
+const Home = React.lazy(() => import('./containers/HomeContainer.jsx'));
 export default [
     {
         path: '/',

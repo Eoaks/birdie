@@ -1,3 +1,5 @@
+import {logOff} from '../redux/sessionActions';
+
 export default function(endpoint, {body, ...config} = {}) {
     const headers = {
         'Content-Type': 'application/json'
@@ -20,6 +22,9 @@ export default function(endpoint, {body, ...config} = {}) {
         .then(async (response) => {
             const data = await response.json();
             if (response.status === 401) {
+                if(logOff && typeof logOff === 'function') {
+                    logOff();
+                }
                 return Promise.reject('unauthorized')
             }
             if(response.ok) {

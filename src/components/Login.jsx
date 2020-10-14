@@ -16,8 +16,9 @@ export default class Login extends React.Component {
             body: this.state
         })
         .then(response => {
-            this.props.setLoggedIn();            
-        });
+            this.props.login(response);            
+        })
+        .catch(err => console.log(err));
     }
 
     handleInputChange = (e) => {
