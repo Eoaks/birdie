@@ -15,7 +15,9 @@ export default class Login extends React.Component {
         ajax('users/login', {
             body: this.state
         })
-        .then(response => console.log(response));
+        .then(response => {
+            this.props.setLoggedIn();            
+        });
     }
 
     handleInputChange = (e) => {

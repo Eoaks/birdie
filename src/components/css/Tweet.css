@@ -14,6 +14,9 @@
 .tweet-nickname, .tweet-handle, .tweet-date{
     margin: 0 5px;
 }
+.tweet-handle::before{
+    content:'@'
+}
 .tweet-nickname{
     font-size: 1em;
     font-weight: 600;
