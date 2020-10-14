@@ -379,7 +379,7 @@ textarea {
     width: calc(100% - 50px);
     position: relative;
     left: 50px;
-    height: 100vh;
+    min-height: 100vh;
 }
 .flex-r-v-center {
     display: flex;

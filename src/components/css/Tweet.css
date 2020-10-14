@@ -4,18 +4,15 @@
     max-width: 600px;
     padding: 20px;
     display: flex;
-    flex-wrap: wrap;
     transition: background-color 0.2s linear;
     border: 1px solid #eee;
+    margin: 0 auto;
 }
 .tweet-container:hover{
     background-color: #eee;
 }
-.tweet-container > div > h1 , .tweet-container > div > span {
+.tweet-nickname, .tweet-handle, .tweet-date{
     margin: 0 5px;
-}
-.tweet-container > div {
-    width: 100%;
 }
 .tweet-nickname{
     font-size: 1em;
@@ -24,6 +21,8 @@
 .tweet-handle, .tweet-date{
     color: #657786;
 }
-.tweet{
+.tweet-content{
     line-height: 1.3;
+    width: 100%;
+    margin-left: 5px;
 }

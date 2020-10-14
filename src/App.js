@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import appRoutes from './routes';
 import Header from './components/Header';
-import Tweet from './components/Tweet';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 var supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 function AppWrapper(props) {
@@ -13,14 +17,17 @@ function App() {
     <div className="App">
       <Header isTouch={supportsTouch} />
       <AppWrapper>
-        <Tweet />
-        <Tweet />
-        <Tweet />
-        <Tweet />
-        <Tweet />
-        <Tweet />
-        <Tweet />
-        <Tweet />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Router>
+            <Switch>
+              {appRoutes.map(route => {
+                return (
+                <Route {...route}/>
+                );
+              })}
+            </Switch>
+          </Router>
+        </Suspense>
       </AppWrapper>
     </div>
   );
