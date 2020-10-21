@@ -1,18 +1,16 @@
 import React from 'react';
 //components
 import Login from '../containers/LoginContainer';
-import NewTweet from './NewTweet';
+import NewTweet from '../containers/NewTweetContainer';
 import Tweet from './Tweet';
 //utils
 import ajax from '../utils/ajax';
-import {getCookieValue} from '../utils/functions';
 
 export default class Home extends React.Component {
     constructor(){
         super();
         this.renderTweets = this.renderTweets.bind(this);
         this.getTweets = this.getTweets.bind(this);
-        this.setLoggedIn = this.setLoggedIn.bind(this);
     }
 
     componentDidMount(){
@@ -32,11 +30,7 @@ export default class Home extends React.Component {
             ))
         }
     }
-    setLoggedIn() {
-        this.setState({
-            loggedIn: getCookieValue('loggedIn')
-        })
-    }
+
     render() {
         if(!this.props.loggedIn){
             return <Login setLoggedIn={this.setLoggedIn} />

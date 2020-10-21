@@ -17,7 +17,13 @@ export default function sessionReducer(state = initialState, action) {
         case ACTIONS.LOGOFF:
             return {
                 ...state,
-                loggedIn: false
+                loggedIn: false,
+                user: {}
+            }
+        case ACTIONS.SET_USER:
+            return {
+                ...state,
+                user: action.payload
             }
         default:
             return state;

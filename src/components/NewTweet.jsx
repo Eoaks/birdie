@@ -21,12 +21,18 @@ export default class NewTweet extends React.Component {
                 content: this.state.content
             }
         }).then( response => {
-            //todo: implement redux and create an action to update in client without an extra request
+            // this.props.addTweet(response)
+            this.setState(() => ({
+                content: ''
+            }))
+            //refresh() will send a GET request for all tweets again
+            //for now this is the best i managed, i need to find a way to populate the newly added tweet in the backend
+            //in order to use it in addTweet()
             this.props.refresh()
         }).catch(err => {
             if (err === 'unauthorized') {
-                //todo: implement redux and create unauth() function to handle log-of when token is invalid
-                if(this.props.unauth) this.props.unauth();
+                //this is not needed anymore since it's fired on the ajax wrapper
+                // if(this.props.logOff) this.props.logOff();
             }
         })
     }

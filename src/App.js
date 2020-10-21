@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react';
 import appRoutes from './routes';
-import Header from './components/Header';
+import Header from './containers/HeaderContainer';
 import {
   BrowserRouter as Router,
   Switch,

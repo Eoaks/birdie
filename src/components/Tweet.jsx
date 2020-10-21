@@ -8,7 +8,7 @@ export default class Tweet extends React.Component {
         let {content, createdAt, created_by: {username}} = this.props.data;
         return (
             <div className="tweet-container">
-                <ProfilePicture />
+                <ProfilePicture username={username}/>
                 <div>
                     <div className="flex-r-v-center">
                         <h1 className="tweet-nickname">{username|| 'User'}</h1>
